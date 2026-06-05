@@ -3,28 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { MapPin, Mail, Phone, Send, CheckCircle } from "lucide-react"
-
-function LinkedinIcon({ className, size }: { className?: string; size?: number }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={size || 24}
-      height={size || 24}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-      <rect width="4" height="12" x="2" y="9" />
-      <circle cx="4" cy="4" r="2" />
-    </svg>
-  )
-}
+import { MapPin, Mail, Phone, Send, CheckCircle, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function ContactSection() {
@@ -143,23 +122,20 @@ export function ContactSection() {
                   </div>
                 </motion.a>
 
-                <motion.a
-                  href="https://www.linkedin.com/in/nithin-vasan-23918532a/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <motion.div
                   whileHover={{ x: 5 }}
-                  className="flex items-center gap-4 p-4 glass rounded-xl border border-primary/20 hover:border-primary/50 transition-all duration-300 cursor-pointer"
+                  className="flex items-center gap-4 p-4 glass rounded-xl border border-primary/20 hover:border-primary/50 transition-all duration-300"
                 >
                   <div className="p-3 rounded-lg bg-primary/10">
-                    <LinkedinIcon className="text-primary" size={24} />
+                    <Globe className="text-primary" size={24} />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">LinkedIn</p>
+                    <p className="text-sm text-muted-foreground">Portfolio</p>
                     <p className="text-foreground font-medium">
-                      linkedin.com/in/nithin-vasan
+                      nithinvasan.dev
                     </p>
                   </div>
-                </motion.a>
+                </motion.div>
               </div>
             </motion.div>
 

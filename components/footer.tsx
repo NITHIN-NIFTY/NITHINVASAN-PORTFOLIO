@@ -1,28 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Mail, Download, Heart, ArrowUp } from "lucide-react"
-
-function LinkedinIcon({ size, className }: { size?: number; className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={size || 24}
-      height={size || 24}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-      <rect width="4" height="12" x="2" y="9" />
-      <circle cx="4" cy="4" r="2" />
-    </svg>
-  )
-}
+import { Mail, Download, Heart, ArrowUp, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Footer() {
@@ -59,13 +38,11 @@ export function Footer() {
             className="flex items-center gap-4"
           >
             <a
-              href="https://www.linkedin.com/in/nithin-vasan-23918532a/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#home"
               className="p-3 glass rounded-full hover:bg-primary/20 transition-colors group"
-              aria-label="LinkedIn Profile"
+              aria-label="Home"
             >
-              <LinkedinIcon
+              <Globe
                 size={20}
                 className="text-muted-foreground group-hover:text-primary transition-colors"
               />

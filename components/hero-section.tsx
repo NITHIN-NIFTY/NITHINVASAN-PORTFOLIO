@@ -6,10 +6,10 @@ import {
   MapPin,
   Mail,
   Phone,
-  Linkedin,
   Download,
   MessageCircle,
   FolderOpen,
+  Globe,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -158,13 +158,11 @@ export function HeroSection() {
             {/* Social Links */}
             <div className="flex items-center gap-4 pt-4">
               <a
-                href="https://www.linkedin.com/in/nithin-vasan-23918532a/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contact"
                 className="p-3 glass rounded-full hover:bg-primary/20 transition-colors group"
-                aria-label="LinkedIn Profile"
+                aria-label="Contact"
               >
-                <Linkedin
+                <Globe
                   size={20}
                   className="text-muted-foreground group-hover:text-primary transition-colors"
                 />
