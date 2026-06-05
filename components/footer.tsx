@@ -10,8 +10,8 @@ export function Footer() {
   }
 
   return (
-    <footer className="py-12 relative border-t border-muted">
-      <div className="container mx-auto px-4">
+    <footer className="py-12 relative border-t border-muted section-contact">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand */}
           <motion.div

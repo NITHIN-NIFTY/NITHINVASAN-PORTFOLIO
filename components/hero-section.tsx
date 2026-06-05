@@ -53,7 +53,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center pt-20 pb-10"
+      className="relative min-h-screen flex items-center justify-center pt-20 pb-10 section-hero"
     >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

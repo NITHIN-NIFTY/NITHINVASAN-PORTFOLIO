@@ -39,8 +39,11 @@ export function ExperienceSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="experience" className="py-20 relative" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section id="experience" className="py-20 relative section-experience overflow-hidden" ref={ref}>
+      {/* Background decorations */}
+      <div className="absolute inset-0 grid-pattern opacity-20" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
