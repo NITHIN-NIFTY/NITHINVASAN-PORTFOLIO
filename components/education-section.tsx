@@ -10,8 +10,9 @@ export function EducationSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="education" className="py-20 relative section-education overflow-hidden" ref={ref}>
-      {/* Background decorations */}
+    <section id="education" className="min-h-screen py-20 relative section-education overflow-hidden" ref={ref}>
+      {/* Blueprint pattern background */}
+      <div className="absolute inset-0 blueprint-pattern opacity-50" />
       <div className="absolute inset-0 grid-pattern opacity-20" />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div

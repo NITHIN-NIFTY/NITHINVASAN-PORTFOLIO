@@ -30,9 +30,10 @@ export function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="about" className="py-20 relative section-about overflow-hidden" ref={ref}>
+    <section id="about" className="min-h-screen py-20 relative section-about overflow-hidden" ref={ref}>
       {/* Background decorations */}
-      <div className="absolute inset-0 grid-pattern opacity-30" />
+      <div className="absolute inset-0 circuit-pattern opacity-50" />
+      <div className="absolute inset-0 grid-pattern opacity-20" />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -56,25 +57,22 @@ export function AboutSection() {
             </h2>
           </div>
 
-          {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-3 gap-8 items-start">
-            {/* Profile Image Column */}
+          {/* Main Content Grid - 2 columns on desktop */}
+          <div className="grid lg:grid-cols-5 gap-8 items-center">
+            {/* Profile Image Column - smaller proportion */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="lg:col-span-1 flex justify-center"
+              className="lg:col-span-2 flex justify-center"
             >
               <div className="relative">
-                {/* Rotating gear decorations */}
-                <div className="absolute -top-8 -left-8 text-primary/30 animate-rotate-gear">
-                  <GearIcon size={60} />
-                </div>
-                <div className="absolute -bottom-6 -right-6 text-secondary/30 animate-rotate-gear-reverse">
-                  <GearIcon size={50} />
-                </div>
-                <div className="absolute top-1/2 -right-10 text-accent/20 animate-rotate-gear">
-                  <GearIcon size={35} />
+                {/* Rotating gear behind image */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-primary/10 animate-rotate-gear">
+                    <GearIcon size={320} className="hidden md:block" />
+                    <GearIcon size={220} className="md:hidden" />
+                  </div>
                 </div>
 
                 {/* Floating particles */}
@@ -83,32 +81,34 @@ export function AboutSection() {
                 <div className="absolute bottom-1/4 -right-4 w-2 h-2 rounded-full bg-accent animate-particle" style={{ animationDelay: "2s" }} />
                 <div className="absolute -bottom-4 left-1/3 w-1.5 h-1.5 rounded-full bg-primary animate-particle" style={{ animationDelay: "0.5s" }} />
 
-                {/* Profile Image Container */}
-                <div className="relative w-[250px] h-[250px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px]">
+                {/* Profile Image Container - responsive sizes: 180px mobile, 250px tablet, 300px desktop */}
+                <div className="relative w-[180px] h-[180px] md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px]">
                   {/* Outer glow ring */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-accent p-1 animate-profile-glow">
-                    <div className="w-full h-full rounded-full bg-[#0A1B3D]" />
-                  </div>
+                  <div className="absolute inset-0 rounded-full border border-cyan-400/40 shadow-[0_0_40px_rgba(0,229,255,0.3)] animate-pulse-glow" />
                   
-                  {/* Image */}
-                  <div className="absolute inset-2 md:inset-3 rounded-full overflow-hidden glass border-2 border-primary/50">
+                  {/* Glassmorphism border */}
+                  <div className="absolute inset-1 rounded-full glass border border-primary/30" />
+                  
+                  {/* Image container */}
+                  <div className="absolute inset-2 rounded-full overflow-hidden">
                     <Image
                       src="/images/profile.jpg"
                       alt="Nithin Vasan - Mechatronics Engineer"
                       fill
-                      className="object-cover"
+                      className="object-cover object-center"
                       priority
+                      sizes="(max-width: 768px) 180px, (max-width: 1024px) 250px, 300px"
                     />
                   </div>
 
                   {/* Inner decorative ring */}
-                  <div className="absolute inset-4 md:inset-6 rounded-full border border-primary/20 pointer-events-none" />
+                  <div className="absolute inset-3 rounded-full border border-primary/10 pointer-events-none" />
                 </div>
               </div>
             </motion.div>
 
-            {/* About Content Column */}
-            <div className="lg:col-span-2 space-y-6">
+            {/* About Content Column - larger proportion */}
+            <div className="lg:col-span-3 space-y-6">
               {/* About Me Card */}
               <motion.div
                 initial={{ opacity: 0, x: 30 }}

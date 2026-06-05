@@ -1,4 +1,3 @@
-import { ParticleBackground } from "@/components/particle-background"
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { AboutSection } from "@/components/about-section"
@@ -15,15 +14,12 @@ import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden grid-pattern">
-      {/* Animated Background */}
-      <ParticleBackground />
-
+    <main className="relative">
       {/* Navigation */}
       <Navigation />
 
-      {/* Main Content */}
-      <div className="relative z-10">
+      {/* Main Content - each section has its own background */}
+      <div className="relative">
         <HeroSection />
         <AboutSection />
         <EducationSection />

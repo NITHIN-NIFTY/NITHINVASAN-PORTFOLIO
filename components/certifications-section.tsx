@@ -38,8 +38,8 @@ export function CertificationsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="certifications" className="py-20 relative section-certifications overflow-hidden" ref={ref}>
-      {/* Background decorations */}
+    <section id="certifications" className="min-h-screen py-20 relative section-certifications overflow-hidden" ref={ref}>
+      {/* Holographic pattern */}
       <div className="absolute inset-0 grid-pattern opacity-20" />
       
       <div className="container mx-auto px-4 relative z-10">

@@ -184,45 +184,71 @@
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
-/* Section backgrounds */
+/* Section backgrounds - each section has unique gradient */
 .section-hero {
-  background: linear-gradient(180deg, #08111F 0%, #0B1020 100%);
+  background: linear-gradient(135deg, #08111F 0%, #0B1020 100%);
 }
 
 .section-about {
-  background: linear-gradient(180deg, #0A1B3D 0%, #102A56 100%);
+  background: linear-gradient(135deg, #102A56 0%, #0A1B3D 100%);
 }
 
 .section-education {
-  background: linear-gradient(180deg, #1B1145 0%, #2E1F63 100%);
+  background: linear-gradient(135deg, #2E1F63 0%, #1B1145 100%);
 }
 
 .section-skills {
-  background: linear-gradient(180deg, #082B22 0%, #0D4032 100%);
+  background: linear-gradient(135deg, #0D4032 0%, #082B22 100%);
 }
 
 .section-experience {
-  background: linear-gradient(180deg, #2B1A08 0%, #4D2E0E 100%);
+  background: linear-gradient(135deg, #4D2E0E 0%, #2B1A08 100%);
 }
 
 .section-projects {
-  background: linear-gradient(180deg, #2A0B14 0%, #4A1024 100%);
+  background: linear-gradient(135deg, #4A1024 0%, #2A0B14 100%);
 }
 
 .section-certifications {
-  background: linear-gradient(180deg, #18103D 0%, #2E1A70 100%);
+  background: linear-gradient(135deg, #2E1A70 0%, #18103D 100%);
 }
 
 .section-achievements {
-  background: linear-gradient(180deg, #2B2400 0%, #4A3D00 100%);
+  background: linear-gradient(135deg, #4A3D00 0%, #2B2400 100%);
 }
 
 .section-blogs {
-  background: linear-gradient(180deg, #051F29 0%, #0A3B4D 100%);
+  background: linear-gradient(135deg, #0A3B4D 0%, #051F29 100%);
+}
+
+.section-services {
+  background: linear-gradient(135deg, #1A2A4D 0%, #0D1628 100%);
 }
 
 .section-contact {
-  background: linear-gradient(180deg, #050505 0%, #101010 100%);
+  background: linear-gradient(135deg, #151515 0%, #050505 100%);
+}
+
+/* Profile image styling */
+.profile-image-container {
+  @apply relative;
+}
+
+.profile-glow {
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.3), 0 0 80px rgba(0, 229, 255, 0.15);
+}
+
+/* Circuit pattern overlay */
+.circuit-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300E5FF' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Blueprint pattern for education section */
+.blueprint-pattern {
+  background-image: 
+    linear-gradient(rgba(108, 99, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(108, 99, 255, 0.05) 1px, transparent 1px);
+  background-size: 25px 25px;
 }
 
 /* Rotating gear animation */

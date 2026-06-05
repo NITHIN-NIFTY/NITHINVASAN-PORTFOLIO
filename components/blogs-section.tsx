@@ -58,8 +58,8 @@ export function BlogsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="blogs" className="py-20 relative section-blogs overflow-hidden" ref={ref}>
-      {/* Background decorations */}
+    <section id="blogs" className="min-h-screen py-20 relative section-blogs overflow-hidden" ref={ref}>
+      {/* Knowledge hub pattern */}
       <div className="absolute inset-0 grid-pattern opacity-20" />
       
       <div className="container mx-auto px-4 relative z-10">

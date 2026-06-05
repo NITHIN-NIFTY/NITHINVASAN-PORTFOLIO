@@ -57,8 +57,8 @@ export function ProjectsSection() {
       : projects.filter((p) => p.category === activeFilter)
 
   return (
-    <section id="projects" className="py-20 relative section-projects overflow-hidden" ref={ref}>
-      {/* Background decorations */}
+    <section id="projects" className="min-h-screen py-20 relative section-projects overflow-hidden" ref={ref}>
+      {/* Innovation lab pattern */}
       <div className="absolute inset-0 grid-pattern opacity-20" />
       
       <div className="container mx-auto px-4 relative z-10">

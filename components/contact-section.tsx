@@ -37,8 +37,8 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20 relative section-contact overflow-hidden" ref={ref}>
-      {/* Background decorations */}
+    <section id="contact" className="min-h-screen py-20 relative section-contact overflow-hidden" ref={ref}>
+      {/* Professional network pattern */}
       <div className="absolute inset-0 grid-pattern opacity-20" />
       
       <div className="container mx-auto px-4 relative z-10">

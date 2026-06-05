@@ -77,8 +77,9 @@ export function SkillsSection() {
   const [activeCategory, setActiveCategory] = useState(0)
 
   return (
-    <section id="skills" className="py-20 relative section-skills overflow-hidden" ref={ref}>
-      {/* Background decorations */}
+    <section id="skills" className="min-h-screen py-20 relative section-skills overflow-hidden" ref={ref}>
+      {/* Circuit pattern background */}
+      <div className="absolute inset-0 circuit-pattern opacity-50" />
       <div className="absolute inset-0 grid-pattern opacity-20" />
       
       <div className="container mx-auto px-4 relative z-10">
