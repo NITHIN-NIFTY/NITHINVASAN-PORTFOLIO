@@ -5,6 +5,7 @@ import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
 import { MapPin, Mail, Phone, Send, CheckCircle, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import emailjs from "@emailjs/browser"
 
 export function ContactSection() {
   const ref = useRef(null)
@@ -17,15 +18,40 @@ export function ContactSection() {
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Simulate form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+
+  try {
+    await emailjs.send(
+      "service_3morp4n",
+      "template_9xldg4h",
+      {
+        name: formState.name,
+        email: formState.email,
+        subject: formState.subject,
+        message: formState.message,
+      },
+      "yXgqyxEiOcZvTDgf9"
+    )
+
     setIsSubmitted(true)
+
+    setFormState({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    })
+
     setTimeout(() => {
       setIsSubmitted(false)
-      setFormState({ name: "", email: "", subject: "", message: "" })
     }, 3000)
+
+  } catch (error) {
+    console.error("Email sending failed:", error)
+    alert("Failed to send message. Please try again.")
   }
+}
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -78,22 +104,23 @@ export function ContactSection() {
               </p>
 
               <div className="space-y-4 pt-4">
-                <motion.div
-                  whileHover={{ x: 5 }}
-                  className="flex items-center gap-4 p-4 glass rounded-xl border border-primary/20 hover:border-primary/50 transition-all duration-300"
-                >
-                  <div className="p-3 rounded-lg bg-primary/10">
-                    <MapPin className="text-primary" size={24} />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Location</p>
-                    <p className="text-foreground font-medium">
-                      Chinnavedampatti, Saravanampatti,
-                      <br />
-                      Coimbatore – 641049, Tamil Nadu, India
-                    </p>
-                  </div>
-                </motion.div>
+                <motion.a
+  href="https://www.linkedin.com/in/nithin-vasan-23918532a/"
+  target="_blank"
+  rel="noopener noreferrer"
+  whileHover={{ x: 5 }}
+  className="flex items-center gap-4 p-4 glass rounded-xl border border-primary/20 hover:border-primary/50 transition-all duration-300 cursor-pointer"
+>
+  <div className="p-3 rounded-lg bg-primary/10">
+    <Globe className="text-primary" size={24} />
+  </div>
+  <div>
+    <p className="text-sm text-muted-foreground">Portfolio</p>
+    <p className="text-foreground font-medium">
+      nithinvasan.dev
+    </p>
+  </div>
+</motion.a>
 
                 <motion.a
                   href="mailto:NITHINVASAN2007@gmail.com"
@@ -125,20 +152,7 @@ export function ContactSection() {
                   </div>
                 </motion.a>
 
-                <motion.div
-                  whileHover={{ x: 5 }}
-                  className="flex items-center gap-4 p-4 glass rounded-xl border border-primary/20 hover:border-primary/50 transition-all duration-300"
-                >
-                  <div className="p-3 rounded-lg bg-primary/10">
-                    <Globe className="text-primary" size={24} />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Portfolio</p>
-                    <p className="text-foreground font-medium">
-                      nithinvasan.dev
-                    </p>
-                  </div>
-                </motion.div>
+              
               </div>
             </motion.div>
 

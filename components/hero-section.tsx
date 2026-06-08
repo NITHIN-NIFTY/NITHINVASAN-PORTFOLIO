@@ -127,12 +127,18 @@ export function HeroSection() {
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 pt-4">
               <Button
-                size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 glow-cyan"
-              >
-                <Download className="mr-2" size={18} />
-                Download Resume
-              </Button>
+  size="lg"
+  className="bg-primary text-primary-foreground hover:bg-primary/90 glow-cyan"
+  asChild
+>
+  <a
+    href="/Nithin_Vasan_Resume.pdf"
+    download="Nithin_Vasan_Resume.pdf"
+  >
+    <Download className="mr-2" size={18} />
+    Download Resume
+  </a>
+</Button>
               <Button
                 size="lg"
                 variant="outline"
@@ -160,15 +166,17 @@ export function HeroSection() {
             {/* Social Links */}
             <div className="flex items-center gap-4 pt-4">
               <a
-                href="#contact"
-                className="p-3 glass rounded-full hover:bg-primary/20 transition-colors group"
-                aria-label="Contact"
-              >
-                <Globe
-                  size={20}
-                  className="text-muted-foreground group-hover:text-primary transition-colors"
-                />
-              </a>
+  href="https://www.linkedin.com/in/nithin-vasan-23918532a/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="p-3 glass rounded-full hover:bg-primary/20 transition-colors group"
+  aria-label="LinkedIn"
+>
+  <Globe
+    size={20}
+    className="text-muted-foreground group-hover:text-primary transition-colors"
+  />
+</a>
               <a
                 href="mailto:NITHINVASAN2007@gmail.com"
                 className="p-3 glass rounded-full hover:bg-primary/20 transition-colors group"

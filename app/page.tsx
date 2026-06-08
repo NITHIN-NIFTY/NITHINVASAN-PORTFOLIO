@@ -5,6 +5,7 @@ import { EducationSection } from "@/components/education-section"
 import { SkillsSection } from "@/components/skills-section"
 import { ExperienceSection } from "@/components/experience-section"
 import { ProjectsSection } from "@/components/projects-section"
+import { WeatherDashboard } from "@/components/weather-dashboard"
 import { CertificationsSection } from "@/components/certifications-section"
 import { AchievementsSection } from "@/components/achievements-section"
 import { BlogsSection } from "@/components/blogs-section"
@@ -26,6 +27,7 @@ export default function Home() {
         <SkillsSection />
         <ExperienceSection />
         <ProjectsSection />
+        <WeatherDashboard />
         <CertificationsSection />
         <AchievementsSection />
         <BlogsSection />
