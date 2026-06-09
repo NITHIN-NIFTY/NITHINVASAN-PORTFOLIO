@@ -22,6 +22,18 @@ export function ContactSection() {
   e.preventDefault()
 
   try {
+    await fetch("https://hook.eu1.make.com/fu4yuqteiwgfiihr2odi8v7u1ym7c535", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    name: formState.name,
+    email: formState.email,
+    subject: formState.subject,
+    message: formState.message,
+  }),
+})
     await emailjs.send(
       "service_3morp4n",
       "template_9xldg4h",
