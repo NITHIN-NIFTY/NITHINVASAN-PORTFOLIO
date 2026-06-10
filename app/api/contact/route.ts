@@ -5,7 +5,7 @@ export async function POST(req: Request) {
     const body = await req.json()
 
     const response = await fetch(
-      "https://hook.eu1.make.com/YOUR_WEBHOOK_URL",
+      "https://hook.eu1.make.com/fu4yuqteiwgfiihr2odi8v7u1ym7c535",
       {
         method: "POST",
         headers: {
