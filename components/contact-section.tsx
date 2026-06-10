@@ -22,7 +22,7 @@ export function ContactSection() {
   e.preventDefault()
 
   try {
-    await fetch("https://hook.eu1.make.com/fu4yuqteiwgfiihr2odi8v7u1ym7c535", {
+    await fetch("/api/contact", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
